@@ -53,11 +53,20 @@ code {
   flex-direction: row;
     display: flex;
     justify-content: space-between;
-    height: 5rem;
+    /* height: 5rem; */
     min-width: 5rem;
     white-space: nowrap;
   }
   
+  .copy_card .card-body .first-part{
+    flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+      /* height: 5rem; */
+      min-width: 5rem;
+      white-space: nowrap;
+    }
+
   .history_card .card-text{
     margin: auto 0rem;
     overflow: hidden;
@@ -75,6 +84,10 @@ code {
 
 .history_card{
   margin-bottom: 2rem;
+}
+
+.copy_card{
+  margin-bottom: 1rem;
 }
 
 .history_card .fixed{
