@@ -49,10 +49,58 @@ code {
   border-radius: 0.5rem;
 }
 
+.history_card .card-body{
+  flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    height: 5rem;
+    min-width: 5rem;
+    white-space: nowrap;
+  }
+  
+  .history_card .card-text{
+    margin: auto 0rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.history_card .card-header{
+    background-color: #888;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+
+
+.history_card{
+  margin-bottom: 2rem;
+}
+
+.history_card .fixed{
+  min-width: 9rem;
+  max-height: 3rem;
+  margin-left: 2rem;
+}
+
 @media only screen and (max-width: 768px){
   #navbarScrollingDropdown{
   margin: 0.5rem ;
  }
  .dropdown-menu.show {
   width:100%;}
+  .nav-link{
+    padding: 0.5rem 1rem;
+  }
+
+  .history_card .card-body{
+    margin-bottom: 0;
+  }
+
+  .history_card .fixed{
+    /* min-height: 4rem; */
+    margin: auto 1rem;
+  }
+
+
 }
