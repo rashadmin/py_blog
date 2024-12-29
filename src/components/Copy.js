@@ -10,6 +10,11 @@ function CopyCard(props) {
   const [buttonText, setButtonText] = useState("Generate");
   const [open, setOpen] = useState(false); // State to manage collapse
 
+
+  const handleGenerateButtonClick = () => {
+    setButtonText("Copy");
+  };
+
   const handleButtonClick = () => {
     navigator.clipboard.writeText(props.content).then(
       () => {
@@ -34,7 +39,7 @@ function CopyCard(props) {
 
         <Card.Title>{props.media}</Card.Title>
         <div className="d-flex justify-content-between align-items-center">
-          <Button className="fixed j" variant="success" onClick={handleButtonClick}>
+          <Button className="fixed j" variant="success" onClick={buttonText === "Generate" ? handleGenerateButtonClick : handleButtonClick}>
             {buttonText}
           </Button>
           <Button variant="link" onClick={toggleCollapse} aria-controls="collapse-content" aria-expanded={open} style={{ textDecoration: "none" }}>
