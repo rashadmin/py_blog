@@ -16,6 +16,7 @@ function App() {
       <Route path='/history' element={<History/>}/>
       <Route path='/profile' element={<Profile/>}/>
       <Route path='*' element={<Navigate to="/"/>}/>
+      <Route path='blog/:blog_id' element={<Blog/>}/>
      </Routes>
     </BrowserRouter>
     </div>

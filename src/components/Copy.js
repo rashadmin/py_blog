@@ -9,10 +9,11 @@ import { FaAngleDown, FaAngleUp } from 'react-icons/fa'; // Font Awesome icons
 function CopyCard(props) {
   const [buttonText, setButtonText] = useState("Generate");
   const [open, setOpen] = useState(false); // State to manage collapse
-
+  const [generate,SetGenerate] = useState(false);
 
   const handleGenerateButtonClick = () => {
     setButtonText("Copy");
+    SetGenerate(true)
   };
 
   const handleButtonClick = () => {
@@ -42,9 +43,10 @@ function CopyCard(props) {
           <Button className="fixed j" variant="success" onClick={buttonText === "Generate" ? handleGenerateButtonClick : handleButtonClick}>
             {buttonText}
           </Button>
-          <Button variant="link" onClick={toggleCollapse} aria-controls="collapse-content" aria-expanded={open} style={{ textDecoration: "none" }}>
+
+          {generate && <Button variant="link" onClick={toggleCollapse} aria-controls="collapse-content" aria-expanded={open} style={{ textDecoration: "none" }}>
              {open ? <FaAngleUp size={20} /> : <FaAngleDown size={20} />}
-          </Button>
+          </Button>}
         </div>
         </div>
         
