@@ -29,7 +29,7 @@ export default function Blog() {
   }, [api]);
 
 
-      const new_data = blog_id ? history[blog_id-1] : undefined
+  const new_data = blog_id && history ? history[parseInt(blog_id) - 1] : undefined;
   return (
     <Body>
     <h1>Blog</h1>
