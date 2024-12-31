@@ -90,6 +90,10 @@ code {
   margin-bottom: 1rem;
 }
 
+.post_card{
+  margin-bottom: 2rem;
+}
+
 .history_card .fixed{
   min-width: 9rem;
   max-height: 3rem;

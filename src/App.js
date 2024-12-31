@@ -4,11 +4,14 @@ import Blog from './pages/blog';
 import History from './pages/history';
 import Home from './pages/home';
 import Profile from './pages/profile';
+import ApiProvider from './contexts/ApiProvider';
+import Container from 'react-bootstrap/Container';
 
 function App() {
   return (
-    <div className="App">
+    <Container className="App">
     <BrowserRouter>
+    <ApiProvider>
      <Header/>
      <Routes>
       <Route path='/home' element={<Home/>}/>
@@ -18,8 +21,10 @@ function App() {
       <Route path='*' element={<Navigate to="/"/>}/>
       <Route path='blog/:blog_id' element={<Blog/>}/>
      </Routes>
+     </ApiProvider>
     </BrowserRouter>
-    </div>
+
+    </Container>
   );
 }
 

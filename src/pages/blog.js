@@ -1,8 +1,11 @@
 import React from 'react'
 import Body from '../components/Body'
+import { useState,useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import CopyCard from '../components/Copy'
+import { useApi } from '../contexts/ApiProvider'
+import PostCard from '../components/PostCard'
 // import ChatBox from '../components/ChatBox'
 
 const  chat = [
@@ -54,6 +57,22 @@ const hists =
 
 export default function Blog() {
   const {blog_id} = useParams();
+  // const [history,setHistory] = useState()
+  // const api = useApi;
+
+  // useEffect(() => {
+  //   (async () => {
+  //     const hist_response = await api['hists'];
+  //     if (hist_response) {
+  //       setHistory(hist_response);
+  //     }
+  //     else {
+  //       setHistory(null);
+  //     }
+  //   })();
+  // }, [api]);
+
+
   // {blog_id!==undefined && 
       const new_data =hists[blog_id-1]
   // console.log(new_data)
@@ -62,11 +81,16 @@ export default function Blog() {
     <h1>Blog</h1>
     <h4>{blog_id}</h4>
     <Container>
-     {   chat[chat.length-1]['agent'] !== 'Okay.' ?
+     {  new_data===undefined  ?
         // // <ChatBox chat={chat}/>
-        <h1>Chatbot</h1>
+        <>
+        <h1>Posts</h1>
+        <p>Several blog post of all social media and its content</p>
+         {hists.map((eachs) => <PostCard title = {eachs['title']} media = {eachs['social_media'][0]}
+                  content ={eachs['description']}/>)}
+        </>
         :
-        new_data!==undefined && new_data['social_media'].map((media) => <CopyCard title={new_data.title} media={media} content={new_data.description}/>)
+        new_data['social_media'].map((media) => <CopyCard title={new_data.title} media={media} content={new_data.description}/>)
         } 
        </Container>
    </Body>
