@@ -5,7 +5,6 @@ import Collapse from 'react-bootstrap/Collapse';
 import Stack from 'react-bootstrap/Stack';
 // imporfrom 'react-bootstra;
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa'; // Font Awesome icons
-
 function PostCard(props) {
   const [buttonText, setButtonText] = useState("Copy");
   const [open, setOpen] = useState(false); // State to manage collapse
@@ -42,17 +41,17 @@ function PostCard(props) {
       </Card.Header>
       <Card.Body>
         {/* <Stack> */}
-        <div className='d-flex justify-content-between align-items-center'>
-        <Card.Text>
+        <div className='d-flex justify-content-between align-items-center btn-gap'>
+        <div>
 
         <Collapse in={open}>
           <div id="collapse-content" className="mt-3">
-            <p>{truncatedContent}</p>
+            {truncatedContent}
             </div>
           </Collapse>
-          {!open && <p>{truncatedContent}</p>}
-        </Card.Text>           
-        <div className="d-flex justify-content-end align-items-center">
+          {!open && truncatedContent}
+        </div>           
+        <div className="d-flex justify-content-end align-items-center btn-gap">
           <Button className="fixed" variant="success" onClick={buttonText === "Copy" && handleButtonClick}>
             {buttonText}
           </Button>

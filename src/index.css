@@ -90,6 +90,15 @@ code {
   margin-bottom: 1rem;
 }
 
+.post_card h3{
+  margin: auto 0rem;
+  min-width: 5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
 .post_card{
   margin-bottom: 2rem;
 }
@@ -98,6 +107,10 @@ code {
   min-width: 9rem;
   max-height: 3rem;
   margin-left: 2rem;
+}
+
+.btn-gap{
+  margin-left: 1rem;
 }
 
 @media only screen and (max-width: 768px){
