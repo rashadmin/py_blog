@@ -1,7 +1,7 @@
 import Form from 'react-bootstrap/Form';
 
 export default function InputField(
-  { name, label, type, placeholder, error, fieldRef }
+  { name, label, type, onChange,placeholder, error, fieldRef , status}
 ) {
   return (
     <Form.Group controlId={name} className="InputField">
@@ -10,7 +10,8 @@ export default function InputField(
         as={type || 'textarea'}
         placeholder={placeholder}
         ref={fieldRef}
-        className='text'
+        className='text align-content-center'
+        onChange={onChange}
       />
       <Form.Text className="text-danger">{error}</Form.Text>
     </Form.Group>

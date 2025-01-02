@@ -3,14 +3,18 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { useState } from 'react';
 import InputField from './InputField';
 import ChatBox from './ChatBox';
+import CopyCard from './Copy';
+import Spinner from 'react-bootstrap/Spinner'
+
 const TextBox = () => {
 
-const generateRandomValue = () => (Math.random() < 0.5 ? "OK" : "Not OK");
+const generateRandomValue = () => (Math.random() < 0.2 ? "OK" : "Not OK");
 const [buttonText, setButtonText] = useState("Generate");
 const [chatCmd, setChatCmd] = useState(null);
 const [formErrors, setFormErrors] = useState({});
 const [showExtraComponent, setShowExtraComponent] = useState(false);
-
+const [data,setData] = useState({title:'',description:'qwertyuiopasdfghjklzxcvbnm'})
+const medias   = ['X','LinkedIn','Facebook']
 const handleButtonClick = () => {
   setButtonText("Generating"); // Step 1: Change to "Generating"
   setTimeout(() => {
@@ -30,30 +34,38 @@ const handleButtonClick = () => {
   }, 3000);
 };
 
+  const onChange = (ev) =>{setData({...data,title:ev.target.value})}
   const onSubmit = (ev) => {
     ev.preventDefault();
+    console.log(ev.target.value,'jdjjdjdjdjd')
+    
     console.log('handle form here');
   };
   return (
     chatCmd === 'Next' ?
-    <h1>Generate PAGE</h1>:
     <>
+    {console.log(data)}
+    {medias.map((media) => <CopyCard title={data['title']} media={media} content={data.description}/>)}
+    </>
+    :
+    <>
+    {console.log(data)}
     {showExtraComponent && <ChatBox/>}
     {/* {chatCmd !== "Next" && chatCmd !== null && <ChatBox />} */}
     <div className='textarea'>
       <Container>
-        <Row className="justify-content-center">
-          <Col xs={12} md={8} lg={6} className="textbox" >
+        {/* <Row className="justify-content-center">
+          <Col xs={12} md={8} lg={6} className="textbox" > */}
           <Form onSubmit={onSubmit} className="d-flex">
           <InputField
           name="chat" placeholder="Enter Your Message"
-          error={formErrors.username} />
-          <Button type="submit" variant="primary" className='button' onClick={handleButtonClick}>
-            {buttonText}
+          error={formErrors.username} onChange={onChange}/>
+          <Button type="submit" variant={(buttonText==="Generate"||buttonText==="Generating")?"primary":buttonText==="Success" ?"success":"warning"} className='button' onClick={handleButtonClick}>
+          {buttonText==="Generating" && <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true"/>} {buttonText}
           </Button>
           </Form>
-          </Col>
-        </Row>
+          {/* </Col>
+        </Row> */}
       </Container>
     </div>
           </>

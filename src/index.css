@@ -145,7 +145,8 @@ code {
 }
 .button{
  font-size: 1.2rem;
-  width:15%;
+  width:20%;
+  margin-left: 0.5rem;
 }
 
 .text{
@@ -154,6 +155,31 @@ code {
 
   /* max-height: 10rem; */
 }
+
+.InputField{
+  width: 70%;
+}
+
+.chatbody{
+  height: 300px;
+  overflow-y: scroll;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.left,.right{
+  margin: "5px 0";
+}
+
+.left{
+  text-align: left;
+}
+
+.right{
+  text-align: right;
+}
+
 
 @media only screen and (max-width: 768px){
   #navbarScrollingDropdown{

@@ -14,7 +14,7 @@ function Header() {
         <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
             
           <Nav className="me-auto my-2 my-lg-0" navbarScroll >
-            <Nav.Link as={NavLink} to="/home">Home</Nav.Link>
+            <Nav.Link as={NavLink} to="/home" end>Home</Nav.Link>
             <Nav.Link as={NavLink} to="/blog">Blog</Nav.Link>
             <Nav.Link as={NavLink} to="/history">History</Nav.Link>
           </Nav>

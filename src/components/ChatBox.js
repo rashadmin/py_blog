@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
-
+import TextBox from './TextBox';
 function ChatBox() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
@@ -23,53 +23,29 @@ function ChatBox() {
 
   return (
     <Container className="chatbox mt-5">
-      <Row>
-        <Col md={{ span: 6, offset: 3 }}>
           <Card>
             <Card.Header className="bg-primary text-white">ChatBox</Card.Header>
             <Card.Body>
-              <div
-                style={{
-                  height: "300px",
-                  overflowY: "scroll",
-                  border: "1px solid #ddd",
-                  padding: "10px",
-                  marginBottom: "10px",
-                }}
-              >
+              <div className='chatbody' >
                 {messages.map((msg, index) => (
-                  <div
-                    key={index}
-                    style={{
-                      textAlign: msg.sender === "User" ? "right" : "left",
-                      margin: "5px 0",
-                    }}
-                  >
+                  <div className={msg.sender === "User"? 'right': 'left'} key={index}>
                     <strong>{msg.sender}:</strong> {msg.text}
-                  </div>
-                ))}
+                  </div>))}
               </div>
-              <Form>
+              <TextBox/>
+              {/* <Form>
                 <Form.Group className="d-flex">
-                  <Form.Control
-                    type="text"
-                    placeholder="Type a message..."
-                    value={input}
-                    onChange={handleInputChange}
-                  />
+                  <Form.Control type="text" placeholder="Type a message..." value={input} onChange={handleInputChange}/>
                   <Button
                     variant="success"
                     className="ms-2"
-                    onClick={handleSendMessage}
-                  >
+                    onClick={handleSendMessage}>
                     Send
                   </Button>
                 </Form.Group>
-              </Form>
+              </Form> */}
             </Card.Body>
           </Card>
-        </Col>
-      </Row>
     </Container>
   );
 }
