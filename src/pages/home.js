@@ -3,6 +3,7 @@ import Body from '../components/Body'
 import Container from 'react-bootstrap/Container'
 import CopyCard from '../components/Copy'
 import ChatBox from '../components/ChatBox'
+import TextBox from '../components/TextBox'
 
 const  chat = [
     {"user": "Hi, can you help me with my account issue?", "agent": "Sure, what seems to be the problem?"},
@@ -25,12 +26,13 @@ export default function Home() {
         <Body>
        <h1>Home</h1>
        <Container>
-        {chat[chat.length-1]['agent'] !== 'Okay.' ?
+        <TextBox/>
+        {/* {chat[chat.length-1]['agent'] !== 'Okay.' ?
         <h1>Chatbot</h1>
         // <ChatBox chat={chat}/>
         :
         new_data['social_media'].map((media) => <CopyCard title={new_data.title} media={media} content={new_data.description}/>)
-        } 
+        }  */}
        </Container>
       </Body>
   )

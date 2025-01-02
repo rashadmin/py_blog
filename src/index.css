@@ -133,6 +133,28 @@ code {
   margin-left: 1rem;
 }
 
+.textarea{
+  height: 80vh;
+  display: flex; 
+  align-items:center; 
+  justify-content: center
+}
+
+.textbox{
+  width: 90%; 
+}
+.button{
+ font-size: 1.2rem;
+  width:15%;
+}
+
+.text{
+  font-size: 1.2rem; 
+
+
+  /* max-height: 10rem; */
+}
+
 @media only screen and (max-width: 768px){
   #navbarScrollingDropdown{
   margin: 0.5rem ;
