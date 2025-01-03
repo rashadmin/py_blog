@@ -12,11 +12,24 @@ const generateRandomValue = () => (Math.random() < 0.2 ? "OK" : "Not OK");
 const [buttonText, setButtonText] = useState("Generate");
 const [chatCmd, setChatCmd] = useState(null);
 const [formErrors, setFormErrors] = useState({});
+const [input, setInput] = useState("");
+const [messages, setMessages] = useState([]);
 const [showExtraComponent, setShowExtraComponent] = useState(false);
 const [data,setData] = useState({title:'',description:'qwertyuiopasdfghjklzxcvbnm'})
 const medias   = ['X','LinkedIn','Facebook']
 const handleButtonClick = () => {
   setButtonText("Generating"); // Step 1: Change to "Generating"
+  if (input.trim()) {
+    setMessages([...messages, { sender: "User", text: input }]);
+    setInput(""); // Clear the input
+    // Simulate agent response
+    setTimeout(() => {
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { sender: "Agent", text: "Okay! I’ve received your message." },
+      ]);
+    }, 1000);
+  }
   setTimeout(() => {
     const result = generateRandomValue(); // Generate random value
     if (result === "OK") {
@@ -34,23 +47,27 @@ const handleButtonClick = () => {
   }, 3000);
 };
 
-  const onChange = (ev) =>{setData({...data,title:ev.target.value})}
+  const onChange = (ev) =>{
+    setData({...data,title:ev.target.value});
+    setInput(ev.target.value);
+
+  }
   const onSubmit = (ev) => {
     ev.preventDefault();
-    console.log(ev.target.value,'jdjjdjdjdjd')
+    // console.log(ev.target.value,'jdjjdjdjdjd')
     
-    console.log('handle form here');
+    // console.log('handle form here');
   };
   return (
     chatCmd === 'Next' ?
     <>
-    {console.log(data)}
+    {/* {console.log(data)} */}
     {medias.map((media) => <CopyCard title={data['title']} media={media} content={data.description}/>)}
     </>
     :
     <>
-    {console.log(data)}
-    {showExtraComponent && <ChatBox/>}
+    {/* {console.log(data)} */}
+    {showExtraComponent && <ChatBox messages={messages}/>}
     {/* {chatCmd !== "Next" && chatCmd !== null && <ChatBox />} */}
     <div className='textarea'>
       <Container>
