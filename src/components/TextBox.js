@@ -18,18 +18,26 @@ const [showExtraComponent, setShowExtraComponent] = useState(false);
 const [data,setData] = useState({title:'',description:'qwertyuiopasdfghjklzxcvbnm'})
 const medias   = ['X','LinkedIn','Facebook']
 const handleButtonClick = () => {
-  setButtonText("Generating"); // Step 1: Change to "Generating"
-  if (input.trim()) {
+    if (!input.trim()) {
+      setFormErrors({ input: "Message box cannot be blank" });
+      return;
+    }
+
+    setFormErrors({}); // Clear errors if the input is valid
+    setButtonText("Generating"); // Step 1: Change to "Generating"
     setMessages([...messages, { sender: "User", text: input }]);
     setInput(""); // Clear the input
+
     // Simulate agent response
-    setTimeout(() => {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { sender: "Agent", text: "Okay! I’ve received your message." },
-      ]);
-    }, 1000);
-  }
+    if (buttonText!=='Generating'){
+      setTimeout(() => {
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { sender: "Agent", text: "Okay! I’ve received your message." },
+        ]);
+      }, 1000);
+    }
+
   setTimeout(() => {
     const result = generateRandomValue(); // Generate random value
     if (result === "OK") {
@@ -65,7 +73,7 @@ const handleButtonClick = () => {
     {medias.map((media) => <CopyCard title={data['title']} media={media} content={data.description}/>)}
     </>
     :
-    <>
+    <div>
     {/* {console.log(data)} */}
     {showExtraComponent && <ChatBox messages={messages}/>}
     {/* {chatCmd !== "Next" && chatCmd !== null && <ChatBox />} */}
@@ -76,16 +84,18 @@ const handleButtonClick = () => {
           <Form onSubmit={onSubmit} className="d-flex">
           <InputField
           name="chat" placeholder="Enter Your Message"
-          error={formErrors.username} onChange={onChange}/>
+          error={formErrors.input} onChange={onChange} value={input}/>
           <Button type="submit" variant={(buttonText==="Generate"||buttonText==="Generating")?"primary":buttonText==="Success" ?"success":"warning"} className='button' onClick={handleButtonClick}>
           {buttonText==="Generating" && <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true"/>} {buttonText}
           </Button>
           </Form>
+          <Form.Text className="text-danger">{formErrors.input}</Form.Text>
+          {/* {formErrors.input && <p className="text-danger mt-2">{formErrors.input}</p>} */}
           {/* </Col>
         </Row> */}
       </Container>
     </div>
-          </>
+          </div>
   );
 };
 

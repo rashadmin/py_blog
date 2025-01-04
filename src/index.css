@@ -133,39 +133,51 @@ code {
   margin-left: 1rem;
 }
 
-.textarea{
-  height: 80vh;
-  display: flex; 
-  align-items:center; 
-  justify-content: center
-}
 
 .textbox{
   width: 90%; 
 }
 .button{
- font-size: 1.2rem;
-  width:20%;
+  font-size: 1.2rem;
+  width:8 rem;
   margin-left: 0.5rem;
 }
 
 .text{
   font-size: 1.2rem; 
-
-
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
   /* max-height: 10rem; */
+}
+.textarea{
+  /* height: 80vh; */
+  /* margin: 3rem; */
+  width: 80%;
+  border: green 2px solid;
+  margin: 2rem auto;
 }
 
 .InputField{
-  width: 70%;
+  width: 80%;
+}
+
+.home-content{
+  border: red 2px solid;
+  /* display: flex; */
+  /* justify-content: center; */
 }
 
 .chatbody{
-  height: 300px;
+  height: 70vh;
+  width: 80%;
+  margin: 0rem auto;
+  border: blue 2px solid;
   overflow-y: scroll;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   padding: 10px;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .left,.right{
@@ -201,5 +213,22 @@ code {
     margin: auto 1rem;
   }
 
+  .InputField{
+    width: 100%;
+  }
 
+  .button{
+    width: 6rem;
+    font-size: 1rem;
+  }
+
+  .chatbody{
+    width: 100%;
+  }
+
+  .textarea{width: 100%;}
+
+  .home-content{
+    width: 100%;
+  }
 }

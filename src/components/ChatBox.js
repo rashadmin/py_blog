@@ -8,10 +8,8 @@ function ChatBox(props) {
   // const handleInputChange = (e) => setter(e.target.value);
 
   return (
-    <Container className="chatbox mt-5">
-          <Card>
-            <Card.Header className="bg-primary text-white">ChatBox</Card.Header>
-            <Card.Body>
+    <Container>
+      {/* <h2></h2> */}
               <div className='chatbody' >
                 {props.messages.map((msg, index) => (
                   <div className={msg.sender === "User"? 'right': 'left'} key={index}>
@@ -32,8 +30,6 @@ function ChatBox(props) {
                   </Button>
                 </Form.Group>
               </Form> */}
-            </Card.Body>
-          </Card>
     </Container>
   );
 }
