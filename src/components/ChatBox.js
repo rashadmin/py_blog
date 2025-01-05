@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
 import TextBox from './TextBox';
+import MessageBox from './MessageBox';
 function ChatBox(props) {
   // const [messages, setMessages] = useState([]);
 
@@ -11,10 +12,7 @@ function ChatBox(props) {
     <Container>
       {/* <h2></h2> */}
               <div className='chatbody' >
-                {props.messages.map((msg, index) => (
-                  <div className={msg.sender === "User"? 'right': 'left'} key={index}>
-                    <strong>{msg.sender}:</strong> {msg.text}
-                  </div>))}
+                {props.messages.map((msg, index) => (<MessageBox sender={msg.sender} msg={msg.text} index={index}/>))}
               </div>
               {/* {console.log(props.input)} */}
               {console.log(props.messages)}
