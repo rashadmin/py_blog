@@ -6,11 +6,11 @@ function MessageBox(props) {
   return (
     props.sender === "User" ?
     <div className='right' key={props.index}>
-    <strong><FaRobot/></strong> <p>{props.msg}</p><strong><FaRobot/></strong>
+    <strong><FaUser/></strong> <p>{props.msg}</p><strong><FaRobot/></strong>
     </div>
     :
     <div className='left' key={props.index}>
-    <strong><FaUser/></strong> <p>{props.msg}</p><strong><FaUser/></strong>
+    <strong><FaRobot/></strong> <p>{props.msg}</p><strong><FaUser/></strong>
     </div>
   )
 }
