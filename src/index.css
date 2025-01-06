@@ -138,6 +138,7 @@ code {
 
 .textbox{
   width: 90%; 
+  
 }
 .button{
   font-size: 1.2rem;
@@ -147,9 +148,9 @@ code {
 
 .text{
   font-size: 1.2rem; 
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal; /* Allow text to wrap to the next line */
+  word-wrap: break-word; /* Ensure long words break to the next line if needed */
+  overflow-wrap: break-word;
   
   /* max-height: 10rem; */
 }
@@ -163,11 +164,15 @@ code {
 
 .textarea .d-flex{
   justify-content: center;
+  word-wrap: break-word; /* Ensure long words wrap */
+  overflow-wrap: break-word; /* Support for modern browsers */
+  white-space: normal; /* Allow text to wrap */
 }
 
 .InputField{
-  width: 80%;
-}
+  width: 80%;}
+
+
 
 
 .chatbody{
@@ -183,6 +188,12 @@ code {
   /* border: 1px solid #ddd; */
   padding: 5px;
   /* margin-bottom: 10px; */
+}
+
+.input{
+  resize: vertical;
+  line-height: 1.5rem;
+  border: 1px solid #ccc;
 }
 
 .left,.right{
