@@ -3,12 +3,14 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Collapse from 'react-bootstrap/Collapse';
 import Stack from 'react-bootstrap/Stack';
+import { FaFacebookSquare,FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 // imporfrom 'react-bootstra;
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa'; // Font Awesome icons
 function PostCard(props) {
   const [buttonText, setButtonText] = useState("Copy");
   const [open, setOpen] = useState(false); // State to manage collapse
-
+  const media ={'LinkedIn':<FaLinkedin/>, 'X':<FaXTwitter />,'Facebook':<FaFacebookSquare/>}
 
   const handleButtonClick = () => {
     navigator.clipboard.writeText(props.content).then(
@@ -26,7 +28,7 @@ function PostCard(props) {
   };
 
   const truncatedContent = props.content.length > 10 && !open
-  ? props.content.substring(0, 100) + "..."
+  ? props.content.substring(0, 50) + "..."
   : props.content;
 
   return (
@@ -35,9 +37,10 @@ function PostCard(props) {
         <h3>
       {props.title}
         </h3>
-        <h4>
-      {props.media}
-        </h4>
+        <h3>
+      {/* FaLinkedin */}
+      {media[props.media]}
+        </h3>
       </Card.Header>
       <Card.Body>
         {/* <Stack> */}

@@ -3,6 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Collapse from 'react-bootstrap/Collapse';
 import Stack from 'react-bootstrap/Stack';
+import { FaFacebookSquare,FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 // imporfrom 'react-bootstra;
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa'; // Font Awesome icons
 
@@ -10,7 +12,7 @@ function CopyCard(props) {
   const [buttonText, setButtonText] = useState("Generate");
   const [open, setOpen] = useState(false); // State to manage collapse
   const [generate,SetGenerate] = useState(false);
-
+  const media ={'LinkedIn':<FaLinkedin/>, 'X':<FaXTwitter />,'Facebook':<FaFacebookSquare/>}
   const handleGenerateButtonClick = () => {
     setButtonText("Copy");
     SetGenerate(true)
@@ -38,7 +40,7 @@ function CopyCard(props) {
         {/* <Stack> */}
         <div className='first-part'>
 
-        <Card.Title>{props.media}</Card.Title>
+        <Card.Title><h2>{media[props.media]}</h2></Card.Title>
         <div className="d-flex justify-content-between align-items-center">
           <Button className="fixed j" variant="success" onClick={buttonText === "Generate" ? handleGenerateButtonClick : handleButtonClick}>
             {buttonText}
