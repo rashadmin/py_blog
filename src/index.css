@@ -16,7 +16,7 @@ body {
 }
 
 .content{
-  margin: 3rem;
+  margin: 3rem 1rem;
 }
 
 code {
@@ -127,6 +127,7 @@ code {
 .post_card h3{
   margin: auto 0rem;
   min-width: 5rem;
+  text-align: end;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -311,7 +312,7 @@ code {
 
   .button{
     width: 6rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .chatbody{
