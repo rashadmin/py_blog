@@ -25,7 +25,7 @@ export default function Home() {
     return (
         <Body>
        <h1>Home</h1>
-       <Container>
+       <Container className='zero-padding'>
         <TextBox/>
         {/* {chat[chat.length-1]['agent'] !== 'Okay.' ?
         <h1>Chatbot</h1>

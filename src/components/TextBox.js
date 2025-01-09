@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import { useState } from 'react';
+import { useState,useRef,useEffect } from 'react';
 import InputField from './InputField';
 import ChatBox from './ChatBox';
 import CopyCard from './Copy';
@@ -17,6 +17,10 @@ const [messages, setMessages] = useState([]);
 const [showExtraComponent, setShowExtraComponent] = useState(false);
 const [data,setData] = useState({title:'',description:'qwertyuiopasdfghjklzxcvbnm'})
 const medias   = ['X','LinkedIn','Facebook']
+const focus = useRef();
+
+useEffect(() => {focus.current.focus()})
+
 const handleButtonClick = () => {
     if (!input.trim()) {
       setFormErrors({ input: "Message box cannot be blank" });
@@ -78,13 +82,13 @@ const handleButtonClick = () => {
     {showExtraComponent && <ChatBox messages={messages}/>}
     {/* {chatCmd !== "Next" && chatCmd !== null && <ChatBox />} */}
     <div className='textarea'>
-      <Container>
+      <Container className='zero-padding'>
         {/* <Row className="justify-content-center">
           <Col xs={12} md={8} lg={6} className="textbox" > */}
           <Form onSubmit={onSubmit} className="d-flex">
           <InputField
           name="chat" placeholder="Enter Your Message"
-          error={formErrors.input} onChange={onChange} value={input}/>
+          error={formErrors.input} onChange={onChange} fieldRef={focus} value={input}/>
           <Button type="submit" variant={(buttonText==="Generate"||buttonText==="Generating")?"primary":buttonText==="Success" ?"success":"warning"} className='button' onClick={handleButtonClick}>
           {buttonText==="Generating" && <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true"/>} {buttonText}
           </Button>

@@ -6,7 +6,7 @@ function HistoryCard(props) {
   return (
     <Card bg="tertiary" className='history_card'>
       <Card.Header className='d-flex justify-content-between align-items-center'>
-        <h3>Post {props.id}</h3>
+        <Button variant='secondary'>Post {props.id}</Button>
 
         <Button variant={props.status==='Completed' ? 'success' : 'warning'}>{props.status}</Button>
       </Card.Header>

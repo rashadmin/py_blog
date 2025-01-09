@@ -9,7 +9,7 @@ function ChatBox(props) {
   // const handleInputChange = (e) => setter(e.target.value);
 
   return (
-    <Container>
+    <Container className='zero-padding'>
       {/* <h2></h2> */}
               <div className='chatbody' >
                 {props.messages.map((msg, index) => (<MessageBox sender={msg.sender} msg={msg.text} index={index}/>))}
