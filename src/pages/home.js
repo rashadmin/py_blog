@@ -25,7 +25,7 @@ export default function Home() {
     return (
         <Body>
        <h1>Home</h1>
-       <div >
+       <Container>
         <TextBox/>
         {/* {chat[chat.length-1]['agent'] !== 'Okay.' ?
         <h1>Chatbot</h1>
@@ -33,7 +33,7 @@ export default function Home() {
         :
         new_data['social_media'].map((media) => <CopyCard title={new_data.title} media={media} content={new_data.description}/>)
         }  */}
-       </div>
+       </Container>
       </Body>
   )
 }

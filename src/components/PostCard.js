@@ -38,7 +38,6 @@ function PostCard(props) {
       {props.title}
         </h3>
         <h3>
-      {/* FaLinkedin */}
       {media[props.media]}
         </h3>
       </Card.Header>

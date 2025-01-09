@@ -15,6 +15,10 @@ body {
   color: #162447;
 }
 
+.content{
+  margin: 3rem;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -109,6 +113,10 @@ code {
 .copy_card .card-header{
   background-color: #162447;
   color: #FFFFFF;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
 }
 
 .post_card .card-header{
@@ -271,10 +279,12 @@ code {
 }
 
 
+
 @media only screen and (max-width: 768px){
   #navbarScrollingDropdown{
-  margin: 0.5rem ;
-  background-color: #1F4068;
+  margin: 0.2rem 0.5rem ;
+  /* padding: 0 0.5rem; */
+  width: 100%;
  }
  .dropdown-menu.show {
   width:100%;}
@@ -308,5 +318,14 @@ code {
 
   .home-content{
     width: 100%;
+  }
+
+  .header .dropdown{
+    max-width: 40%;
+    border-radius: 0.5rem;
+  }
+  .drop{
+    justify-content: space-around;
+    margin-bottom: 1rem;
   }
 }

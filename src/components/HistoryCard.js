@@ -5,7 +5,11 @@ import { FaAngleRight } from 'react-icons/fa';
 function HistoryCard(props) {
   return (
     <Card bg="tertiary" className='history_card'>
-      <Card.Header>Post {props.id}</Card.Header>
+      <Card.Header className='d-flex justify-content-between align-items-center'>
+        <h3>Post {props.id}</h3>
+
+        <Button variant={props.status==='Completed' ? 'success' : 'warning'}>{props.status}</Button>
+      </Card.Header>
       <Card.Body>
         <Card.Text>
          {props.title} <br/>

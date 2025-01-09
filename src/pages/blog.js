@@ -54,7 +54,7 @@ export default function Blog() {
           ))}
         </>
         :
-        new_data['social_media'].map((media,index) => <CopyCard key = {index} title={new_data.title} media={media} content={new_data.description}/>)
+        new_data['social_media'].map((media,index) => <CopyCard key = {index} title={new_data.title} media={media} content={new_data.description} status={new_data.status}/>)
         } 
        </Container>
    </Body>

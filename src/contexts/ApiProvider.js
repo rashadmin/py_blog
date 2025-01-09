@@ -18,35 +18,40 @@ export default function ApiProvider({ children }) {
               title: "Exploring the Unknown",
               timestamp: "2 hours ago",
               social_media: ["LinkedIn", "Facebook", "X"],
-              description: "Dive into the mysteries of life and science, and share your discoveries on LinkedIn, Facebook, and X."
-          },
+              description: "Dive into the mysteries of life and science, and share your discoveries on LinkedIn, Facebook, and X.",
+              status: 'Completed'
+            },
           {
               id: 2,
               title: "Adventures in the Wild",
               timestamp: "5 minutes ago",
               social_media: ["LinkedIn", "Facebook", "X"],
-              description: "Embark on thrilling adventures and learn how to connect with fellow explorers on social media platforms."
-          },
+              description: "Embark on thrilling adventures and learn how to connect with fellow explorers on social media platforms.",
+              status: 'Completed'
+            },
           {
               id: 3,
               title: "Technology and Tomorrow",
               timestamp: "30 seconds ago",
               social_media: ["LinkedIn", "Facebook", "X"],
-              description: "Discover how emerging technologies are shaping our future and engage with tech enthusiasts online."
+              description: "Discover how emerging technologies are shaping our future and engage with tech enthusiasts online.",
+              status: 'Pending'
           },
           {
               id: 4,
               title: "A Journey Through Time",
               timestamp: "1 day ago",
               social_media: ["LinkedIn", "Facebook", "X"],
-              description: "Explore history's wonders and milestones, and discuss their impact on modern society through social media."
+              description: "Explore history's wonders and milestones, and discuss their impact on modern society through social media.",
+              status: 'Pending'
           },
           {
               id: 5,
               title: "Reflections on Progress",
               timestamp: "3 hours ago",
               social_media: ["LinkedIn", "Facebook", "X"],
-              description: "Reflect on humanity's achievements and share your thoughts on progress and innovation with your network."
+              description: "Reflect on humanity's achievements and share your thoughts on progress and innovation with your network.",
+              status: 'Completed'
           }
         ]
 

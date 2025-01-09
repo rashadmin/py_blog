@@ -9,7 +9,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa'; // Font Awesome icons
 
 function CopyCard(props) {
-  const [buttonText, setButtonText] = useState("Generate");
+  const [buttonText, setButtonText] = useState(props.status !== 'Completed' ? "Generate" : 'Copy');
   const [open, setOpen] = useState(false); // State to manage collapse
   const [generate,SetGenerate] = useState(false);
   const media ={'LinkedIn':<FaLinkedin/>, 'X':<FaXTwitter />,'Facebook':<FaFacebookSquare/>}
@@ -45,8 +45,9 @@ function CopyCard(props) {
           <Button className="fixed j" variant="success" onClick={buttonText === "Generate" ? handleGenerateButtonClick : handleButtonClick}>
             {buttonText}
           </Button>
+          
 
-          {generate && <Button variant="link" onClick={toggleCollapse} aria-controls="collapse-content" aria-expanded={open} style={{ textDecoration: "none" }}>
+          {(generate || props.status === 'Completed') && <Button variant="link" onClick={toggleCollapse} aria-controls="collapse-content" aria-expanded={open} style={{ textDecoration: "none" }}>
              {open ? <FaAngleUp size={20} /> : <FaAngleDown size={20} />}
           </Button>}
         </div>

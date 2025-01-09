@@ -18,6 +18,8 @@ function Header() {
             <Nav.Link as={NavLink} to="/blog">Blog</Nav.Link>
             <Nav.Link as={NavLink} to="/history">History</Nav.Link>
           </Nav>
+          <div className='d-flex drop'>
+
           <Navbar.Text>
             Signed in as: 
 
@@ -27,6 +29,7 @@ function Header() {
                 <NavDropdown.Divider />
                 <NavDropdown.Item as={NavLink} to="/logout">Log out</NavDropdown.Item>         
         </NavDropdown>
+          </div>
 
         </Navbar.Collapse>
       </Container>
