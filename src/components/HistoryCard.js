@@ -15,7 +15,7 @@ function HistoryCard(props) {
          {props.title} <br/>
          <small>{props.timestamp}</small>
         </Card.Text>
-        <Button as={NavLink} to={`/Blog/${props.id}`} className="fixed justify-content-end" variant="primary">Open <FaAngleRight size={20} /></Button>
+        <Button as={NavLink} to={`/Blog/${props.id}`} className="fixed justify-content-end align-content-center" variant="info">Open <FaAngleRight size={20} /></Button>
       </Card.Body>
     </Card>
   );

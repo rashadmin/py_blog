@@ -33,7 +33,6 @@ export default function Blog() {
   return (
     <Body>
     <h1>Blog</h1>
-    <h4>{blog_id}</h4>
     <Container>
      {  new_data===undefined  ?
         // // <ChatBox chat={chat}/>

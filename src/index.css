@@ -145,6 +145,10 @@ code {
   margin-left: 2rem;
 }
 
+.history_card .card-header .btn{
+  font-size: 0.8rem;
+} 
+
 .btn-gap{
   margin-left: 1rem;
 }
