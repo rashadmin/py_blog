@@ -54,10 +54,10 @@ function PostCard(props) {
           {!open && truncatedContent}
         </div>           
         <div className="d-flex justify-content-end align-items-center btn-gap">
-          <Button className="fixed" variant="success" onClick={buttonText === "Copy" && handleButtonClick}>
+          <Button className="fixed" onClick={buttonText === "Copy" && handleButtonClick}>
             {buttonText}
           </Button>
-          <Button variant="link" onClick={toggleCollapse} aria-controls="collapse-content" aria-expanded={open} style={{ textDecoration: "none" }}>
+          <Button variant="link" onClick={toggleCollapse} aria-controls="collapse-content" aria-expanded={open} style={{ textDecoration: "none",color:'#ffffff' }}>
              {open ? <FaAngleUp size={20} /> : <FaAngleDown size={20} />}
           </Button>
         </div>

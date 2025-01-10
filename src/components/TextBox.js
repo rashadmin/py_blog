@@ -8,7 +8,7 @@ import Spinner from 'react-bootstrap/Spinner'
 
 const TextBox = () => {
 
-const generateRandomValue = () => (Math.random() < 0.2 ? "OK" : "Not OK");
+const generateRandomValue = () => (Math.random() < 0 ? "OK" : "Not OK");
 const [buttonText, setButtonText] = useState("Generate");
 const [chatCmd, setChatCmd] = useState(null);
 const [formErrors, setFormErrors] = useState({});
@@ -19,7 +19,9 @@ const [data,setData] = useState({title:'',description:'qwertyuiopasdfghjklzxcvbn
 const medias   = ['X','LinkedIn','Facebook']
 const focus = useRef();
 
-useEffect(() => {focus.current.focus()})
+useEffect(() => {
+  if (focus.current) {
+  focus.current.focus()}})
 
 const handleButtonClick = () => {
     if (!input.trim()) {
@@ -88,8 +90,10 @@ const handleButtonClick = () => {
           <Form onSubmit={onSubmit} className="d-flex">
           <InputField
           name="chat" placeholder="Enter Your Message"
-          error={formErrors.input} onChange={onChange} fieldRef={focus} value={input}/>
-          <Button type="submit" variant={(buttonText==="Generate"||buttonText==="Generating")?"primary":buttonText==="Success" ?"success":"warning"} className='button' onClick={handleButtonClick}>
+          error={formErrors.input} onChange={onChange} fieldRef={focus} value={input}/>   
+          <Button type="submit" className="button" style={{ backgroundColor: buttonText === "Success" ? "#1a2252" : buttonText === "Not yet" ? "#d2930e" : "#303c79",}} onClick={handleButtonClick}>
+
+          {/* <Button type="submit" className={(buttonText==="Generate"||buttonText==="Generating")?"button":buttonText==="Success" ?"success":"fail" } onClick={handleButtonClick}> */}
           {buttonText==="Generating" && <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true"/>} {buttonText}
           </Button>
           </Form>

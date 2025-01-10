@@ -11,9 +11,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #eeeeee;
-  color: #162447;
+  background-color: #DBDBDB;
+  color: #1A2252;
 }
+
+/* Target the scrollbar track */
+::-webkit-scrollbar {
+  width: 4px; /* Width of the scrollbar */
+}
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+  background: #1A2252; /* Light gray background */
+  border-radius: 10px; /* Rounded edges */
+}
+
+/* Thumb (scroll indicator) */
+::-webkit-scrollbar-thumb {
+  background: #108d9f; /* Custom color */
+  border-radius: 10px; /* Rounded edges */
+}
+
+/* Hover effect for the thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: #1a2252; /* Darker shade on hover */
+}
+
+/* Optional: scrollbar for the horizontal axis */
+::-webkit-scrollbar-horizontal {
+  height: 10px; /* Height of horizontal scrollbar */
+}
+
 
 .content{
   margin: 3rem 1rem;
@@ -26,7 +54,7 @@ code {
 
 .header{
   font-size: 1.3rem;
-  background-color: #162447;
+  background-color: #1A2252;
   color: #FFFFFF;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
@@ -38,6 +66,7 @@ code {
 }
 .header .nav-link{
   margin: 0 1rem;
+  color: #FFFFFF;
 }
 
 .navbar-text{
@@ -50,12 +79,14 @@ code {
 }
 
 .navbar-nav .nav-link.active{
-  color: #000;
+  color: #fff;
 }
+
+
 
 .active{
   color: #000;
-  background-color: #F9A826;
+  background-color: #D2930E;
   border-radius: 0.6rem;
 }
 
@@ -72,7 +103,7 @@ code {
     /* height: 5rem; */
     min-width: 5rem;
     white-space: nowrap;
-    background-color: #1F4068;
+    background-color: #303C79;
   }
   
   .copy_card .card-body .first-part{
@@ -92,7 +123,7 @@ code {
 }
 
 .history_card .card-header{
-    background-color: #162447;
+    background-color: #1A2252;
     color: #FFFFFF;
     font-size: 1.2rem;
     font-weight: bolder;
@@ -106,12 +137,12 @@ code {
 
 .copy_card{
   margin-bottom: 1rem;
-  background-color: #1F4068;
+  background-color: #303C79;
   color: #FFFFFF;
 }
 
 .copy_card .card-header{
-  background-color: #162447;
+  background-color: #1A2252;
   color: #FFFFFF;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -120,7 +151,7 @@ code {
 }
 
 .post_card .card-header{
-  background-color: #162447;
+  background-color: #1A2252;
   color: #FFFFFF;
 }
 
@@ -136,13 +167,14 @@ code {
 
 .post_card{
   margin-bottom: 2rem;
-  background-color: #1F4068;
+  background-color: #303C79;
   color: #FFFFFF;
 }
 
 .history_card .fixed{
   min-width: 9rem;
   max-height: 3rem;
+  background-color: #D2930E;
   margin-left: 2rem;
 }
 
@@ -160,6 +192,8 @@ code {
   
 }
 .button{
+  background-color: #303C79;
+  border: none;
   font-size: 1.2rem;
   width:8 rem;
   margin-left: 0.5rem;
@@ -203,7 +237,7 @@ code {
   width: 80%;
   margin: 0rem auto;
   /* border: blue 2px solid; */
-  overflow-y: scroll;
+  overflow-y: auto;
   /* border: 1px solid #ddd; */
   padding: 5px 0;
   /* margin-bottom: 10px; */
@@ -234,7 +268,7 @@ code {
 .left strong, .right strong{
   font-size: 2rem;
   border-radius: 100%;
-  background-color: red;
+  background-color: #108d9f;
   width: 3rem; /* Fixed width for the strong element */
   height: 3rem; 
   /* heigth:3rem ; */
@@ -242,6 +276,12 @@ code {
   text-align: center;
   /* margin: 0 1rem; */
   flex-shrink: 0;
+}
+
+.fixed{
+  background-color: #D2930E;
+  border: none;
+  color: #FFFFFF;
 }
 
 .right strong{
@@ -304,6 +344,7 @@ code {
   .history_card .fixed{
     /* min-height: 4rem; */
     margin: auto 1rem;
+    background-color: #D2930E;
   }
 
   .InputField{

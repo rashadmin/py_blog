@@ -7,7 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function Header() {
   return (
-    <Navbar collapseOnSelect className='header' expand="md" bg="dark" data-bs-theme="dark">
+    <Navbar collapseOnSelect className='header' expand="md" data-bs-theme="dark">
       <Container>
       <Navbar.Brand as={Link} to="/home">Py's Blog</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -24,7 +24,7 @@ function Header() {
             Signed in as: 
 
           </Navbar.Text>
-          <NavDropdown title="Py_Sama" id="navbarScrollingDropdown" className='bg-primary'>
+          <NavDropdown style={{ backgroundColor:'#108d9f',border:'none' }} title="Py_Sama" id="navbarScrollingDropdown" >
                 <NavDropdown.Item as={NavLink} to="/Profile">Profile</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item as={NavLink} to="/logout">Log out</NavDropdown.Item>         

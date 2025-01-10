@@ -42,12 +42,12 @@ function CopyCard(props) {
 
         <Card.Title><h2>{media[props.media]}</h2></Card.Title>
         <div className="d-flex justify-content-between align-items-center">
-          <Button className="fixed j" variant="success" onClick={buttonText === "Generate" ? handleGenerateButtonClick : handleButtonClick}>
+          <Button className="fixed" onClick={buttonText === "Generate" ? handleGenerateButtonClick : handleButtonClick}>
             {buttonText}
           </Button>
           
 
-          {(generate || props.status === 'Completed') && <Button variant="link" onClick={toggleCollapse} aria-controls="collapse-content" aria-expanded={open} style={{ textDecoration: "none" }}>
+          {(generate || props.status === 'Completed') && <Button onClick={toggleCollapse} aria-controls="collapse-content" aria-expanded={open} style={{ textDecoration: "none",backgroundColor:"#D2930E" }}>
              {open ? <FaAngleUp size={20} /> : <FaAngleDown size={20} />}
           </Button>}
         </div>
