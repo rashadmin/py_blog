@@ -332,7 +332,9 @@ code {
   width: 100%;
  }
  .dropdown-menu.show {
-  width:100%;}
+  width:100%;
+background-color: #1A2252;
+color: #FFFFFF;}
   .nav-link{
     padding: 0.5rem 1rem;
   }
