@@ -30,6 +30,7 @@ function PostCard(props) {
 
   const toggleCollapse = () => {
     setOpen(!open);
+    setShow(false)
   };
 
   const truncatedoriginal = props.original.length > 10 && !open
@@ -62,7 +63,10 @@ function PostCard(props) {
           </Collapse>
 
       {!open &&  truncatedContent}
-      {show && truncatedoriginal}
+      {show && 
+      <div className='original'>
+      {truncatedoriginal}
+      </div>}
     {/* </div>)} */}
         </div>           
         

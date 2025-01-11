@@ -279,9 +279,17 @@ code {
 }
 
 .fixed{
-  background-color: #D2930E;
+  background-color: #D2930E !important;
   border: none;
   color: #FFFFFF;
+  font-size: 0.8rem;
+}
+
+.original{
+  background-color: #108d9f;
+  margin-top: 0.5rem;
+  border-radius: 10px;
+  padding: 1rem 1rem;
 }
 
 .right strong{
