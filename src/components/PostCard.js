@@ -57,22 +57,22 @@ function PostCard(props) {
 
         <Collapse in={open}>
           <div id="collapse-content" className="mt-3">
-            {show ? truncatedoriginal :truncatedContent}
+            {truncatedContent}
             </div>
           </Collapse>
-          {!open && (
-    <div>
-      {show ? truncatedoriginal : truncatedContent}
-    </div>)}
-          {/* {!open && show ? truncatedoriginal : truncatedContent} */}
+
+      {!open &&  truncatedContent}
+      {show && truncatedoriginal}
+    {/* </div>)} */}
         </div>           
+        
         <div className="d-flex justify-content-end align-items-center btn-gap">
           {/* <Button className="fixed" onClick={buttonText === "Copy" && handleButtonClick}>
             {buttonText}
           </Button> */}
-          <Button className="fixed" onClick={handleButtonClick}>
-            {show ? 'Formatted' : 'Original'}
-          </Button>
+          {open && <Button className="fixed" onClick={handleButtonClick}>
+            {show ? 'Hide Original' : 'Show Original'}
+          </Button>}
           <Button variant="link" onClick={toggleCollapse} aria-controls="collapse-content" aria-expanded={open} style={{ textDecoration: "none",color:'#ffffff' }}>
              {open ? <FaAngleUp size={20} /> : <FaAngleDown size={20} />}
           </Button>
