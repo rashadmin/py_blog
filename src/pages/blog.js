@@ -49,6 +49,7 @@ export default function Blog() {
               title={eachs['title']}
               media={eachs['social_media'][0]}
               content={eachs['description']}
+              original={eachs['original']}
             />
           ))}
         </>
